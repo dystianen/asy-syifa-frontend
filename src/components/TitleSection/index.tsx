@@ -12,7 +12,7 @@ function TitleSection({ title, desc }: PropsTitle) {
         {title}
         <Divider size={"lg"} mt={5} color={"success.4"} />
       </Title>
-      <Text component="p" c={"neutral.7"}>
+      <Text component="p" ta={"center"} c={"neutral.7"}>
         {desc}
       </Text>
     </Stack>

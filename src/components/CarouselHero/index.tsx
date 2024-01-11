@@ -2,8 +2,10 @@ import { Carousel } from "@mantine/carousel";
 import Image from "next/image";
 import React, { useRef } from "react";
 import Autoplay from "embla-carousel-autoplay";
+import { useMediaQuery } from "@mantine/hooks";
 
 function CarouselHero() {
+  const isSmallerScreen = useMediaQuery("(max-width: 30em)");
   const autoplay = useRef(Autoplay({ delay: 2000 }));
 
   const data = [
@@ -25,7 +27,7 @@ function CarouselHero() {
           color: "white",
         },
       }}
-      h={{ base: 200, lg: 400 }}
+      height={isSmallerScreen ? 250 : 400}
       plugins={[autoplay.current]}
       onMouseEnter={autoplay.current.stop}
       onMouseLeave={autoplay.current.reset}

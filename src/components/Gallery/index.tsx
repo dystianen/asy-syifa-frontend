@@ -32,7 +32,7 @@ function Gallery() {
         plugins={[autoplay.current]}
         onMouseEnter={autoplay.current.stop}
         onMouseLeave={autoplay.current.reset}
-        slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
+        slideSize={{ base: "100%", sm: "50%", lg: "33.333333%" }}
         slidesToScroll={1}
         align="start"
       >

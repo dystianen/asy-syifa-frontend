@@ -3,9 +3,12 @@ import "./globals.css";
 import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
 import { MantineProvider } from "@mantine/core";
-import Header from "@/components/Header";
 import { theme } from "@/config/theme";
 import { Poppins } from "next/font/google";
+import dynamic from "next/dynamic";
+
+const Header = dynamic(() => import("@/components/Header"));
+const Footer = dynamic(() => import("@/components/Footer"));
 
 export const metadata: Metadata = {
   title: "Asy-Syifa'",
@@ -31,6 +34,7 @@ export default function RootLayout({
         <MantineProvider theme={theme}>
           <Header />
           {children}
+          <Footer />
         </MantineProvider>
       </body>
     </html>

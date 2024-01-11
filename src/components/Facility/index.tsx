@@ -1,8 +1,11 @@
 import { Box, Card, Container, Grid, Stack, Text } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import Image from "next/image";
 import React from "react";
 
 function Facility() {
+  const isMobile = useMediaQuery("(max-width: 56.25em)");
+
   const data = [
     {
       title: "Taman Pendidikan Tartil Al-Qur’an",
@@ -37,7 +40,7 @@ function Facility() {
       <Container size={"xl"}>
         <Grid
           pb={100}
-          justify="center"
+          justify={isMobile ? "start" : "center"}
           gutter={"xl"}
           styles={{
             col: {
@@ -47,7 +50,7 @@ function Facility() {
           }}
         >
           {data.map((it, index) => (
-            <Grid.Col key={index} span={{ base: 12, lg: 2 }}>
+            <Grid.Col key={index} span={{ base: 12, md: 4, lg: 2 }}>
               <Card
                 h={220}
                 w={190}

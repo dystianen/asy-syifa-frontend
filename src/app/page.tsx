@@ -7,13 +7,12 @@ const CarouselHero = dynamic(() => import("@/components/CarouselHero"));
 const Facility = dynamic(() => import("@/components/Facility"));
 const Gallery = dynamic(() => import("@/components/Gallery"));
 const News = dynamic(() => import("@/components/News"));
-const Contact = dynamic(() => import("@/components/Contact"));
 
 export default function Home() {
   return (
     <>
       <Container size={"xl"} mt={{ base: 28, md: 80 }}>
-        <Grid align="center" gutter={0}>
+        <Grid align="center" gutter={10}>
           <Grid.Col
             span={{ base: 12, lg: 6 }}
             order={{ base: 2, lg: 1 }}
@@ -52,7 +51,6 @@ export default function Home() {
       <Facility />
       <Gallery />
       <News />
-      <Contact />
     </>
   );
 }
