@@ -9,11 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mantine/carousel": "^7.4.1",
     "@mantine/core": "^7.4.1",
     "@mantine/hooks": "^7.4.1",
+    "embla-carousel-autoplay": "^7.1.0",
+    "embla-carousel-react": "^7.1.0",
     "next": "14.0.4",
+    "postcss-preset-mantine": "^1.12.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-icons": "^5.0.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@types/node": "^20",
