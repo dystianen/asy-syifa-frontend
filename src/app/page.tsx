@@ -12,7 +12,7 @@ const News = dynamic(() => import("@/components/News"));
 export default function Home() {
   return (
     <>
-      <Container size={"xl"} mt={{ base: 28, md: 150 }}>
+      <Container size={"xl"}>
         <Grid align="center" gutter={10}>
           <Grid.Col
             span={{ base: 12, lg: 6 }}

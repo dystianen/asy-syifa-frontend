@@ -33,7 +33,7 @@ export default function RootLayout({
       <body className={poppins.className}>
         <MantineProvider theme={theme}>
           <Header />
-          {children}
+          <div className="my-36">{children}</div>
           <Footer />
         </MantineProvider>
       </body>

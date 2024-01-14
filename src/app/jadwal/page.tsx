@@ -14,7 +14,7 @@ function Jadwal() {
   ];
 
   return (
-    <Container size={"lg"} py={64}>
+    <Container size={"lg"}>
       <Banner title="Jadwal Kegiatan" image="/assets/jadwal-kegiatan.png" />
       <Stack justify="center" h={"100%"}>
         <Title order={3} c={"success.4"} ta={"center"}>
