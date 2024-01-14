@@ -2,6 +2,7 @@ import { Box, Card, Container, Grid, Stack, Text } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
 function Facility() {
   const isMobile = useMediaQuery("(max-width: 56.25em)");
@@ -51,25 +52,42 @@ function Facility() {
         >
           {data.map((it, index) => (
             <Grid.Col key={index} span={{ base: 12, md: 4, lg: 2 }}>
-              <Card
-                h={220}
-                w={190}
-                radius={"lg"}
-                styles={{
-                  root: {
-                    boxShadow: "0px 4px 32px rgba(0, 0, 0, 0.06)",
-                    ":hover": {
-                      boxShadow: "8px 8px 33px #cccccc,-8px -8px 33px #f4f4f4",
-                      cursor: "pointer",
-                    },
-                  },
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  translateY: 100,
                 }}
+                whileInView={{
+                  opacity: 1,
+                  translateY: 0,
+                }}
+                transition={{
+                  duration: 0.5,
+                  delay: index,
+                }}
+                viewport={{ once: true }}
               >
-                <Stack align="center" h={"100%"} justify="center">
-                  <Image src={it.icon} width={80} height={80} alt="icon" />
-                  <Text ta={"center"}>{it.title}</Text>
-                </Stack>
-              </Card>
+                <Card
+                  h={220}
+                  w={190}
+                  radius={"lg"}
+                  styles={{
+                    root: {
+                      boxShadow: "0px 4px 32px rgba(0, 0, 0, 0.06)",
+                      ":hover": {
+                        boxShadow:
+                          "8px 8px 33px #cccccc,-8px -8px 33px #f4f4f4",
+                        cursor: "pointer",
+                      },
+                    },
+                  }}
+                >
+                  <Stack align="center" h={"100%"} justify="center">
+                    <Image src={it.icon} width={80} height={80} alt="icon" />
+                    <Text ta={"center"}>{it.title}</Text>
+                  </Stack>
+                </Card>
+              </motion.div>
             </Grid.Col>
           ))}
         </Grid>

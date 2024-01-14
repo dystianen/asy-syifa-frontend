@@ -6,7 +6,7 @@ import { useMediaQuery } from "@mantine/hooks";
 
 function CarouselHero() {
   const isSmallerScreen = useMediaQuery("(max-width: 30em)");
-  const autoplay = useRef(Autoplay({ delay: 2000 }));
+  const autoplay = useRef(Autoplay({ delay: 5000 }));
 
   const data = [
     "/assets/ustd-nas3.jpg",

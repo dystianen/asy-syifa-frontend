@@ -13,6 +13,7 @@ import {
 } from "@mantine/core";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 function News() {
   const theme = useMantineTheme();
@@ -38,7 +39,7 @@ function News() {
       desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     },
   ];
-  
+
   return (
     <Box>
       <TitleSection
@@ -52,44 +53,60 @@ function News() {
           <Grid align="center">
             {data.map((item, index) => (
               <Grid.Col span={{ base: 6, md: 3 }} key={index}>
-                <Card bg={"white"} radius={15} shadow="sm" p={0}>
-                  <Image
-                    src={item.img}
-                    width={300}
-                    height={100}
-                    alt="image"
-                    className="w-full object-contain"
-                  />
-                  <Box p={16}>
-                    <Title order={5} c={"neutral.9"}>
-                      {item.title}
-                    </Title>
-                    <Text lineClamp={3} c={"neutral.7"}>
-                      {item.desc}
-                    </Text>
-                    <Link href={"#"} style={{ width: "max-content" }}>
-                      <Text
-                        c="success.4"
-                        styles={{
-                          root: {
-                            "&:hover": {
-                              color: theme.colors.success[9],
-                            },
-                          },
-                        }}
-                      >
-                        Selengkapnya
+                <motion.div
+                  initial={{
+                    opacity: 0,
+                    translateY: 100,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    translateY: 0,
+                  }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index,
+                  }}
+                  viewport={{ once: true }}
+                >
+                  <Card bg={"white"} radius={15} shadow="sm" p={0}>
+                    <Image
+                      src={item.img}
+                      width={300}
+                      height={100}
+                      alt="image"
+                      className="w-full object-contain"
+                    />
+                    <Box p={16}>
+                      <Title order={5} c={"neutral.9"}>
+                        {item.title}
+                      </Title>
+                      <Text lineClamp={3} c={"neutral.7"}>
+                        {item.desc}
                       </Text>
-                    </Link>
-                  </Box>
-                </Card>
+                      <Link href={"#"} style={{ width: "max-content" }}>
+                        <Text
+                          c="success.4"
+                          styles={{
+                            root: {
+                              "&:hover": {
+                                color: theme.colors.success[9],
+                              },
+                            },
+                          }}
+                        >
+                          Selengkapnya
+                        </Text>
+                      </Link>
+                    </Box>
+                  </Card>
+                </motion.div>
               </Grid.Col>
             ))}
           </Grid>
 
           <Flex justify="center" mt={32}>
             <Button bg={"white"} c={"success.4"} radius={"xl"}>
-              Lihat Selengkapnya
+              Lihat Semua Artikel
             </Button>
           </Flex>
         </Container>
