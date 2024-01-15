@@ -8,7 +8,6 @@ import {
   Stack,
   Text,
   Title,
-  UnstyledButton,
   useMantineTheme,
 } from "@mantine/core";
 import Image from "next/image";
@@ -43,7 +42,7 @@ function Contact() {
     },
   ];
   return (
-    <Container size={"xl"} mt={100} pb={30}>
+    <Container size={"xl"} mt={100} pb={30} id="kontak">
       <motion.div
         initial={{
           opacity: 0,
@@ -74,6 +73,7 @@ function Contact() {
               </Text>
               <Flex gap={20}>
                 <ActionIcon
+                  id="instagram"
                   variant="transparent"
                   onClick={() =>
                     window.open("https://www.instagram.com/assovo/")
@@ -84,6 +84,7 @@ function Contact() {
                   />
                 </ActionIcon>
                 <ActionIcon
+                  id="whatsapp"
                   variant="transparent"
                   onClick={() =>
                     window.open(
@@ -113,6 +114,7 @@ function Contact() {
             <Stack>
               <Title order={4}>Peta Lokasi</Title>
               <iframe
+                title="asy-syifa-maps"
                 width="100%"
                 height="200"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.253790638512!2d112.6532948!3d-7.9727019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6284504a469e5%3A0xb3edf039d83b25d7!2sGg.%2013%20No.60%2C%20Sawojajar%2C%20Kec.%20Kedungkandang%2C%20Kota%20Malang%2C%20Jawa%20Timur%2065139!5e0!3m2!1sid!2sid!4v1705245283402!5m2!1sid!2sid"

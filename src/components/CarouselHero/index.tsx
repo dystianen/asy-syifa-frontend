@@ -39,7 +39,7 @@ function CarouselHero() {
             width={400}
             height={200}
             alt="testing"
-            className="w-full h-full"
+            className="w-full h-full aspect-video"
           />
         </Carousel.Slide>
       ))}

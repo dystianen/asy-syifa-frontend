@@ -1,8 +1,9 @@
 "use client";
-import { Button, Container, Grid, Stack, Text } from "@mantine/core";
+import { Box, Button, Container, Grid, Stack, Text } from "@mantine/core";
 import { FaArrowDown } from "react-icons/fa6";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
+import { useRef } from "react";
 
 const CarouselHero = dynamic(() => import("@/components/CarouselHero"));
 const Facility = dynamic(() => import("@/components/Facility"));
@@ -10,6 +11,16 @@ const Gallery = dynamic(() => import("@/components/Gallery"));
 const News = dynamic(() => import("@/components/News"));
 
 export default function Home() {
+  const refFacility = useRef<HTMLInputElement>(null);
+  const scrollToElement = () => {
+    if (refFacility.current != null) {
+      window.scrollTo({
+        top: refFacility.current.offsetTop - 100,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <>
       <Container size={"xl"}>
@@ -17,7 +28,7 @@ export default function Home() {
           <Grid.Col
             span={{ base: 12, lg: 6 }}
             order={{ base: 2, lg: 1 }}
-            mt={{ base: 60, md: 0 }}
+            mt={{ base: 10, md: 0 }}
           >
             <motion.div
               initial={{
@@ -37,7 +48,7 @@ export default function Home() {
                   Lembaga Pendidikan dan Kajian Islam
                 </Text>
 
-                <Text size="32px" c="success.4" fw={600}>
+                <Text size="32px" c="success.5" fw={600}>
                   Asy-Syifa&#39;
                 </Text>
                 <Text component="p" c={"neutral.7"}>
@@ -48,11 +59,12 @@ export default function Home() {
                   hidup sehari-hari di masyarakat.
                 </Text>
                 <Button
-                  mt={20}
+                  mt={{ base: 4, md: 20 }}
                   w={"max-content"}
                   rightSection={<FaArrowDown />}
                   bg={"success.5"}
                   radius={"xl"}
+                  onClick={scrollToElement}
                 >
                   Lihat Selengkapnya
                 </Button>
@@ -64,7 +76,9 @@ export default function Home() {
           </Grid.Col>
         </Grid>
       </Container>
-      <Facility />
+      <Box ref={refFacility}>
+        <Facility />
+      </Box>
       <Gallery />
       <News />
     </>

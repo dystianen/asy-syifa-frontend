@@ -38,19 +38,7 @@ function Header() {
           <Image src={"/assets/logo.png"} width={40} height={40} alt="logo" />
           <Text size="xl">Asy-Syifa&#39;</Text>
         </Box>
-        {isSmallerScreen ? (
-          <ActionIcon
-            variant="transparent"
-            c={"dark"}
-            onClick={() => setIsShowNavbar(!isShowNavbar)}
-          >
-            {isShowNavbar ? (
-              <MdClose style={{ fontSize: 32 }} />
-            ) : (
-              <FaBars style={{ fontSize: 24 }} />
-            )}
-          </ActionIcon>
-        ) : (
+        {!isSmallerScreen ? (
           <nav className="flex gap-10">
             <Link href={"/"}>Home</Link>
             <Menu shadow="md">
@@ -73,8 +61,20 @@ function Header() {
               </Menu.Dropdown>
             </Menu>
             <Link href={"/blog"}>Artikel</Link>
-            <Link href={"/kontak"}>Kontak</Link>
+            <Link href={"#kontak"}>Kontak</Link>
           </nav>
+        ) : (
+          <ActionIcon
+            variant="transparent"
+            c={"dark"}
+            onClick={() => setIsShowNavbar(!isShowNavbar)}
+          >
+            {isShowNavbar ? (
+              <MdClose style={{ fontSize: 32 }} />
+            ) : (
+              <FaBars style={{ fontSize: 24 }} />
+            )}
+          </ActionIcon>
         )}
       </Container>
 
@@ -85,14 +85,12 @@ function Header() {
         <Stack mx={16} mb={24}>
           <Link href={"/"}>Home</Link>
           <Menu shadow="md">
-            <Menu.Target>
-              <UnstyledButton onClick={() => setOpenedProfile(!openedProfile)}>
-                <Flex align={"center"} gap={10}>
-                  Profil
-                  <IoIosArrowDown />
-                </Flex>
-              </UnstyledButton>
-            </Menu.Target>
+            <UnstyledButton onClick={() => setOpenedProfile(!openedProfile)}>
+              <Flex align={"center"} gap={10}>
+                Profil
+                <IoIosArrowDown />
+              </Flex>
+            </UnstyledButton>
 
             <Collapse in={openedProfile} bg={"transparent"}>
               <Stack ml={16} my={10}>
@@ -102,7 +100,7 @@ function Header() {
             </Collapse>
           </Menu>
           <Link href={"/blog"}>Artikel</Link>
-          <Link href={"/kontak"}>Kontak</Link>
+          <Link href={"#kontak"}>Kontak</Link>
         </Stack>
       </Collapse>
     </header>

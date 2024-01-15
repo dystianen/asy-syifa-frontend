@@ -2,6 +2,7 @@
 import { Container, List, Stack, Text, Title } from "@mantine/core";
 import dynamic from "next/dynamic";
 import React from "react";
+import { motion } from "framer-motion";
 
 const Banner = dynamic(() => import("@/components/Banner"));
 
@@ -13,27 +14,41 @@ function VisiMisi() {
     "Memberikan dasar-dasar kemampuan baca, tulis serta hafalan Al-Qur’an (khususnya Juz ‘Amma) juga Hafalan sistem Sorogan.",
     "Membentuk kepribadian berlandaskan kepada keyakinan yang benar dan perilaku yang mulia.",
   ];
-  
+
   return (
     <Container size={"lg"}>
       <Banner title="Visi dan Misi" image="/assets/foto3.png" />
-      <Stack justify="center" h={"100%"}>
-        <Title order={3} c={"success.4"} ta={"center"}>
-          Visi
-        </Title>
-        <Text ta={"center"}>
-          “Menjadikan generasi Qur’ani yang cerdas dan berilmu, bertauhid kokoh,
-          serta berakhlak mulia.”
-        </Text>
-        <Title order={3} c={"success.4"} ta={"center"} mt={64}>
-          Misi
-        </Title>
-        <List type="ordered">
-          {listMisi.map((item, index) => (
-            <List.Item key={index}>{item}</List.Item>
-          ))}
-        </List>
-      </Stack>
+      <motion.div
+        initial={{
+          opacity: 0,
+          scale: 0.8,
+        }}
+        whileInView={{
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{
+          duration: 0.5,
+        }}
+      >
+        <Stack justify="center" h={"100%"}>
+          <Title order={3} c={"success.4"} ta={"center"}>
+            Visi
+          </Title>
+          <Text ta={"center"}>
+            “Menjadikan generasi Qur’ani yang cerdas dan berilmu, bertauhid
+            kokoh, serta berakhlak mulia.”
+          </Text>
+          <Title order={3} c={"success.4"} ta={"center"} mt={64}>
+            Misi
+          </Title>
+          <List type="ordered">
+            {listMisi.map((item, index) => (
+              <List.Item key={index}>{item}</List.Item>
+            ))}
+          </List>
+        </Stack>
+      </motion.div>
     </Container>
   );
 }
