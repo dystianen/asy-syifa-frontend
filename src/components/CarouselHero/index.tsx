@@ -21,9 +21,6 @@ function CarouselHero() {
         viewport: {
           borderRadius: 15,
         },
-        control: {
-          color: "white",
-        },
       }}
       height={isSmallerScreen ? 250 : 400}
       plugins={[autoplay.current]}
