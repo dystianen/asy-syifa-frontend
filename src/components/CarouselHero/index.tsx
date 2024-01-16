@@ -1,18 +1,16 @@
+"use client";
 import { Carousel } from "@mantine/carousel";
 import Image from "next/image";
 import React, { useRef } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import { useMediaQuery } from "@mantine/hooks";
+import { useGetListHeroQuery } from "@/store/api.slice";
 
 function CarouselHero() {
   const isSmallerScreen = useMediaQuery("(max-width: 30em)");
   const autoplay = useRef(Autoplay({ delay: 5000 }));
 
-  const data = [
-    "/assets/ustd-nas3.jpg",
-    "/assets/ustd-nas.jpg",
-    "/assets/foto1.png",
-  ];
+  const { data: responseHero } = useGetListHeroQuery();
 
   return (
     <Carousel
@@ -32,10 +30,10 @@ function CarouselHero() {
       onMouseEnter={autoplay.current.stop}
       onMouseLeave={autoplay.current.reset}
     >
-      {data.map((image, index) => (
+      {responseHero?.data?.map((hero: any, index: number) => (
         <Carousel.Slide key={index}>
           <Image
-            src={image}
+            src={hero.file_path}
             width={400}
             height={200}
             alt="testing"

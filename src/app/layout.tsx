@@ -6,6 +6,7 @@ import { MantineProvider } from "@mantine/core";
 import { theme } from "@/config/theme";
 import { Poppins } from "next/font/google";
 import dynamic from "next/dynamic";
+import { Providers } from "@/store/Provider";
 
 const Header = dynamic(() => import("@/components/Header"));
 const Footer = dynamic(() => import("@/components/Footer"));
@@ -31,11 +32,13 @@ export default function RootLayout({
         <link rel="icon" href="/assets/logo.png" />
       </head>
       <body className={poppins.className}>
-        <MantineProvider theme={theme}>
-          <Header />
-          <div className="my-36">{children}</div>
-          <Footer />
-        </MantineProvider>
+        <Providers>
+          <MantineProvider theme={theme}>
+            <Header />
+            <div className="my-36">{children}</div>
+            <Footer />
+          </MantineProvider>
+        </Providers>
       </body>
     </html>
   );

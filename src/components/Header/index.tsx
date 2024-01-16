@@ -13,7 +13,7 @@ import {
 import { useMediaQuery } from "@mantine/hooks";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { FaBars } from "react-icons/fa6";
 import { MdClose } from "react-icons/md";
@@ -21,9 +21,19 @@ import { IoIosArrowDown } from "react-icons/io";
 
 function Header() {
   const router = useRouter();
+  const pathname = usePathname();
   const isSmallerScreen = useMediaQuery("(max-width: 30em)");
   const [isShowNavbar, setIsShowNavbar] = useState<boolean>(false);
   const [openedProfile, setOpenedProfile] = useState<boolean>(false);
+
+  const getColorNavbar = (text: string) => {
+    let color = "neutral.9";
+    if (pathname === text) {
+      color = "success.5";
+    }
+
+    return color;
+  };
 
   return (
     <header className="h-20 fixed w-full top-0 bg-white z-50 shadow-md">
@@ -40,7 +50,9 @@ function Header() {
         </Box>
         {!isSmallerScreen ? (
           <nav className="flex gap-10">
-            <Link href={"/"}>Home</Link>
+            <Link href={"/"}>
+              <Text c={getColorNavbar("/")}>Home</Text>
+            </Link>
             <Menu shadow="md">
               <Menu.Target>
                 <UnstyledButton>
@@ -52,15 +64,23 @@ function Header() {
               </Menu.Target>
 
               <Menu.Dropdown>
-                <Menu.Item onClick={() => router.push("/visi-misi")}>
+                <Menu.Item
+                  c={getColorNavbar("/visi-misi")}
+                  onClick={() => router.push("/visi-misi")}
+                >
                   Visi & Misi
                 </Menu.Item>
-                <Menu.Item onClick={() => router.push("/jadwal")}>
+                <Menu.Item
+                  c={getColorNavbar("/jadwal")}
+                  onClick={() => router.push("/jadwal")}
+                >
                   Jadwal
                 </Menu.Item>
               </Menu.Dropdown>
             </Menu>
-            <Link href={"/blog"}>Artikel</Link>
+            <Link href={"/blog"}>
+              <Text c={getColorNavbar("/blog")}>Artikel</Text>
+            </Link>
             <Link href={"#kontak"}>Kontak</Link>
           </nav>
         ) : (
@@ -85,8 +105,11 @@ function Header() {
         <Stack mx={16} mb={24}>
           <Link href={"/"}>Home</Link>
           <Menu shadow="md">
-            <UnstyledButton onClick={() => setOpenedProfile(!openedProfile)}>
-              <Flex align={"center"} gap={10}>
+            <UnstyledButton
+              
+              onClick={() => setOpenedProfile(!openedProfile)}
+            >
+              <Flex align={"center"} gap={10} c={getColorNavbar("/visi-misi")}>
                 Profil
                 <IoIosArrowDown />
               </Flex>
@@ -94,12 +117,18 @@ function Header() {
 
             <Collapse in={openedProfile} bg={"transparent"}>
               <Stack ml={16} my={10}>
-                <Link href={"/visi-misi"}>Visi & Misi</Link>
-                <Link href={"/jadwal"}>Jadwal</Link>
+                <Link href={"/visi-misi"}>
+                  <Text c={getColorNavbar("/visi-misi")}>Visi & Misi</Text>
+                </Link>
+                <Link href={"/jadwal"}>
+                  <Text c={getColorNavbar("/jadwal")}>Jadwal</Text>
+                </Link>
               </Stack>
             </Collapse>
           </Menu>
-          <Link href={"/blog"}>Artikel</Link>
+          <Link href={"/blog"}>
+            <Text c={getColorNavbar("blog")}>Artikel</Text>
+          </Link>
           <Link href={"#kontak"}>Kontak</Link>
         </Stack>
       </Collapse>
