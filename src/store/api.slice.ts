@@ -44,16 +44,20 @@ export const baseApi = createApi({
   baseQuery: axiosBaseQuery({
     baseUrl: process.env.NEXT_PUBLIC_API_URL || "",
   }),
-  tagTypes: ["HERO"],
   endpoints: (builder) => ({
     getListHero: builder.query<any, void>({
       query: () => ({
         url: "/hero",
         method: "GET",
       }),
-      providesTags: ["HERO"],
+    }),
+    getListGallery: builder.query<any, void>({
+      query: () => ({
+        url: "/gallery",
+        method: "GET",
+      }),
     }),
   }),
 });
 
-export const { useGetListHeroQuery } = baseApi;
+export const { useGetListHeroQuery, useGetListGalleryQuery } = baseApi;

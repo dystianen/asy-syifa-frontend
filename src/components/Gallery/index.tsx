@@ -1,22 +1,15 @@
 import { Carousel } from "@mantine/carousel";
-import { Box, Divider, Stack, Text, Title } from "@mantine/core";
+import { Box } from "@mantine/core";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import React, { useRef } from "react";
 import TitleSection from "../TitleSection";
+import { useGetListGalleryQuery } from "@/store/api.slice";
 
 function Gallery() {
   const autoplay = useRef(Autoplay({ delay: 2000 }));
-  const data = [
-    "/assets/ustd-nas3.jpg",
-    "/assets/ustd-nas.jpg",
-    "/assets/ustd-nas.jpg",
-    "/assets/ustd-nas.jpg",
-    "/assets/ustd-nas.jpg",
-    "/assets/ustd-nas.jpg",
-    "/assets/ustd-nas.jpg",
-    "/assets/ustd-nas.jpg",
-  ];
+  const { data: responseGallery } = useGetListGalleryQuery();
+
   return (
     <Box pb={100}>
       <TitleSection
@@ -36,10 +29,10 @@ function Gallery() {
         slidesToScroll={1}
         align="start"
       >
-        {data.map((image, index) => (
+        {responseGallery?.data?.map((gallery: any, index: number) => (
           <Carousel.Slide key={index}>
             <Image
-              src={image}
+              src={gallery.file_path}
               width={400}
               height={200}
               alt="testing"

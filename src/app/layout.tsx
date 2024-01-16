@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+"use client";
 import "./globals.css";
 import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
@@ -10,11 +10,6 @@ import { Providers } from "@/store/Provider";
 
 const Header = dynamic(() => import("@/components/Header"));
 const Footer = dynamic(() => import("@/components/Footer"));
-
-export const metadata: Metadata = {
-  title: "Asy-Syifa'",
-  description: "Lembaga pendidikan dan kajian islam",
-};
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -30,6 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/assets/logo.png" />
+        <title>Asy-Syifa’</title>
       </head>
       <body className={poppins.className}>
         <Providers>
