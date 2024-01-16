@@ -51,6 +51,12 @@ export const baseApi = createApi({
         method: "GET",
       }),
     }),
+    getListActivity: builder.query<any, void>({
+      query: () => ({
+        url: "/activity",
+        method: "GET",
+      }),
+    }),
     getListGallery: builder.query<any, void>({
       query: () => ({
         url: "/gallery",
@@ -60,4 +66,8 @@ export const baseApi = createApi({
   }),
 });
 
-export const { useGetListHeroQuery, useGetListGalleryQuery } = baseApi;
+export const {
+  useGetListHeroQuery,
+  useGetListGalleryQuery,
+  useGetListActivityQuery,
+} = baseApi;

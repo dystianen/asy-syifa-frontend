@@ -7,6 +7,7 @@ import { useRef } from "react";
 
 const CarouselHero = dynamic(() => import("@/components/CarouselHero"));
 const Facility = dynamic(() => import("@/components/Facility"));
+const Activity = dynamic(() => import("@/components/Activity"));
 const Gallery = dynamic(() => import("@/components/Gallery"));
 const News = dynamic(() => import("@/components/News"));
 
@@ -79,6 +80,7 @@ export default function Home() {
       <Box ref={refFacility}>
         <Facility />
       </Box>
+      <Activity />
       <Gallery />
       <News />
     </>

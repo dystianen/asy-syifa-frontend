@@ -21,11 +21,11 @@ function Gallery() {
         withControls={false}
         draggable
         loop
-        height={250}
+        height={200}
         plugins={[autoplay.current]}
         onMouseEnter={autoplay.current.stop}
         onMouseLeave={autoplay.current.reset}
-        slideSize={{ base: "100%", sm: "50%", lg: "33.333333%" }}
+        slideSize={{ base: "100%", sm: "50%", lg: "25%" }}
         slidesToScroll={1}
         align="start"
       >
