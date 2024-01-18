@@ -11,7 +11,7 @@ function Activity() {
       <TitleSection title="Kegiatan" desc="Kegiatan kami di TPQ Asy-Syifa’" />
       <Grid>
         {responseActivity?.data?.map((activity: any, index: number) => (
-          <Grid.Col key={index} span={4}>
+          <Grid.Col key={index} span={{ base: 2, md: 4 }}>
             <Card className="relative overflow-hidden card-activity" p={0}>
               <Image
                 src={activity.file_path}
@@ -21,7 +21,9 @@ function Activity() {
                 className="w-full h-64 rounded-sm img-activity"
               />
               <Box className="absolute h-40 bg-gradient-to-t from-black z-50 w-full bottom-0">
-                <Text c={"white"} className="absolute bottom-3 left-5">{activity.title}</Text>
+                <Text c={"white"} className="absolute bottom-3 left-5">
+                  {activity.title}
+                </Text>
               </Box>
             </Card>
           </Grid.Col>

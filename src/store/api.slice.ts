@@ -27,6 +27,12 @@ const axiosBaseQuery =
         data,
         params,
         headers,
+        // headers: {
+        //   "Access-Control-Allow-Origin": "https://dashboard.asy-syifa.site/",
+        //   "Access-Control-Allow-Methods": "GET, PUT, POST, DELETE, PATCH, OPTIONS",
+        //   "Access-Control-Allow-Headers": "origin, x-api-key, x-requested-with, content-type, accept, access-control-request-method, access-control-allow-headers, authorization, observe, enctype, content-length, x-csrf-token",
+        //   "Access-Control-Allow-Credentials": true,
+        // },
       });
       return { data: result.data };
     } catch (axiosError) {
