@@ -37,6 +37,7 @@ function Facility() {
         height={200}
         alt="union"
         className="w-full"
+        priority
       />
       <Container size={"xl"}>
         <Grid
