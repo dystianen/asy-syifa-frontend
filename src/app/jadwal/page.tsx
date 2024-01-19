@@ -18,7 +18,7 @@ function Jadwal() {
     <Container size={"lg"}>
       <Banner title="Jadwal Kegiatan" image="/assets/jadwal-kegiatan.png" />
       <Stack justify="center" h={"100%"}>
-        <Title order={3} c={"success.4"} ta={"center"}>
+        <Title order={3} c={"success.8"} ta={"center"}>
           Tempat
         </Title>
         <motion.div
@@ -34,14 +34,14 @@ function Jadwal() {
             duration: 0.5,
           }}
         >
-          <Text ta={"center"}>
+          <Text ta={"center"} c={"neutral.8"}>
             “Kegiatan ini bertempat di Wilayah RT. 05 RW. 03 Kelurahan
             Sawojajar, tempatnya di kediaman Bapak AHMAD NASIKIN, S.Ag, M.Pd.
             yang beralamat di Jl. Sawojajar XIII No. 60 Kelurahan Sawojajar,
             Kecamatan Kedungkandang, Kota Malang, 65139.”
           </Text>
         </motion.div>
-        <Title order={3} c={"success.4"} ta={"center"} mt={64}>
+        <Title order={3} c={"success.8"} ta={"center"} mt={64}>
           Jadwal
         </Title>
         <Stack>
@@ -61,7 +61,7 @@ function Jadwal() {
                 delay: index,
               }}
             >
-              <Card withBorder radius={"lg"}>
+              <Card withBorder radius={"lg"} c={"neutral.8"}>
                 {item}
               </Card>
             </motion.div>

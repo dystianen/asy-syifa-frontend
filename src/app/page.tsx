@@ -45,14 +45,14 @@ export default function Home() {
               }}
             >
               <Stack w={{ base: "100%", lg: "80%" }}>
-                <Text size="32px" fw={600} lh={"xs"} c={"neutral.8"}>
+                <Text size="32px" fw={600} lh={"xs"} c={"neutral.9"}>
                   Lembaga Pendidikan dan Kajian Islam
                 </Text>
 
-                <Text size="32px" c="success.5" fw={600}>
+                <Text size="32px" c="success.8" fw={600}>
                   Asy-Syifa&#39;
                 </Text>
-                <Text component="p" c={"neutral.7"}>
+                <Text component="p" c={"neutral.8"}>
                   Menyediakan pendidikan dasar Agama yang berkualitas untuk
                   putra-putri kaum muslimin serta mengembangkan kemampuan diri
                   dan fitrah manusia akan agama, dan tergeraknya hati untuk
@@ -63,7 +63,7 @@ export default function Home() {
                   mt={{ base: 4, md: 20 }}
                   w={"max-content"}
                   rightSection={<FaArrowDown />}
-                  bg={"success.5"}
+                  bg={"success.8"}
                   radius={"xl"}
                   onClick={scrollToElement}
                 >

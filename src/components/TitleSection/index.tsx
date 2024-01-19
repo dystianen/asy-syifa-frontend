@@ -23,9 +23,9 @@ function TitleSection({ title, desc }: PropsTitle) {
         }}
         viewport={{ once: true }}
       >
-        <Title ta={"center"} c={"neutral.8"} w={"max-content"}>
+        <Title ta={"center"} c={"neutral.9"} w={"max-content"}>
           {title}
-          <Divider size={"lg"} mt={5} color={"success.4"} />
+          <Divider size={"lg"} mt={5} color={"success.8"} />
         </Title>
       </motion.div>
       <motion.div
@@ -42,7 +42,7 @@ function TitleSection({ title, desc }: PropsTitle) {
         }}
         viewport={{ once: true }}
       >
-        <Text component="p" ta={"center"} c={"neutral.7"}>
+        <Text component="p" ta={"center"} c={"neutral.8"}>
           {desc}
         </Text>
       </motion.div>

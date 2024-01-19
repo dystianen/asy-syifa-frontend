@@ -66,7 +66,7 @@ function Contact() {
                 height={100}
                 alt="logo"
               />
-              <Text c={"neutral.7"}>
+              <Text c={"neutral.8"}>
                 Lembaga Pendidikan dan Kajian Islam Asy-Syifa’ peduli dengan
                 pendidikan putra-putri dan demi masa depan Islam yang lebih
                 cemerlang.
@@ -105,7 +105,7 @@ function Contact() {
               {dataContact.map((it, index) => (
                 <Flex key={index} align={"start"} gap={5}>
                   <Box mt={3}>{it.icon}</Box>
-                  <Text c={"neutral.7"}>{it.title}</Text>
+                  <Text c={"neutral.8"}>{it.title}</Text>
                 </Flex>
               ))}
             </Stack>
@@ -123,9 +123,9 @@ function Contact() {
             </Stack>
           </Grid.Col>
         </Grid>
-        <Text c={"neutral.7"} ta={"center"} mt={72}>
+        <Text c={"neutral.8"} ta={"center"} mt={72}>
           2024 &copy; Copyright - Lembaga Pendidikan dan Kajian Islam{" "}
-          <Text c={"success.4"} component="span">
+          <Text c={"success.8"} component="span">
             Asy-Syifa’
           </Text>
         </Text>

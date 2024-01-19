@@ -77,15 +77,15 @@ function News() {
                       className="w-full object-contain"
                     />
                     <Box p={16}>
-                      <Title order={5} c={"neutral.9"}>
+                      <Text fw={600} c={"neutral.9"} fz={18}>
                         {item.title}
-                      </Title>
-                      <Text lineClamp={3} c={"neutral.7"}>
+                      </Text>
+                      <Text lineClamp={3} c={"neutral.8"}>
                         {item.desc}
                       </Text>
                       <Link href={"#"} style={{ width: "max-content" }}>
                         <Text
-                          c="success.4"
+                          c="success.8"
                           styles={{
                             root: {
                               "&:hover": {
@@ -105,7 +105,7 @@ function News() {
           </Grid>
 
           <Flex justify="center" mt={32}>
-            <Button bg={"white"} c={"success.4"} radius={"xl"}>
+            <Button bg={"white"} c={"success.8"} radius={"xl"}>
               Lihat Semua Artikel
             </Button>
           </Flex>

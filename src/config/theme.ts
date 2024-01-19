@@ -62,7 +62,7 @@ export const theme: MantineThemeOverride = {
       "#A5B0BB", // 5 (grey Arrow right) <= This is regarding figma color design
       "#B0B6BD",
       "#868E96", // 7 <= This is regarding figma color design
-      "#4D545C", // <= This is regarding figma color design
+      "#54595E", // <= This is regarding figma color design
       "#1D252D", // <= This is regarding figma color design,
     ],
   },

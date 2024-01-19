@@ -32,17 +32,17 @@ function VisiMisi() {
         }}
       >
         <Stack justify="center" h={"100%"}>
-          <Title order={3} c={"success.4"} ta={"center"}>
+          <Title order={3} c={"success.8"} ta={"center"}>
             Visi
           </Title>
-          <Text ta={"center"}>
+          <Text ta={"center"} c={"neutral.8"}>
             “Menjadikan generasi Qur’ani yang cerdas dan berilmu, bertauhid
             kokoh, serta berakhlak mulia.”
           </Text>
-          <Title order={3} c={"success.4"} ta={"center"} mt={64}>
+          <Title order={3} c={"success.8"} ta={"center"} mt={64}>
             Misi
           </Title>
-          <List type="ordered">
+          <List type="ordered" c={"neutral.8"}>
             {listMisi.map((item, index) => (
               <List.Item key={index}>{item}</List.Item>
             ))}

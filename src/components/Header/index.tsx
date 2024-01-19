@@ -29,7 +29,7 @@ function Header() {
   const getColorNavbar = (text: string) => {
     let color = "neutral.9";
     if (pathname === text) {
-      color = "success.5";
+      color = "success.8";
     }
 
     return color;
