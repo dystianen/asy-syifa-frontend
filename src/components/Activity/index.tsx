@@ -18,10 +18,10 @@ function Activity() {
             <Card className="relative overflow-hidden card-activity" p={0}>
               <Image
                 src={activity.file_path}
-                width={isMobile ? 800 : 1000}
-                height={isMobile ? 300 : 400}
+                width={1000}
+                height={400}
                 alt={activity.file_name}
-                className="rounded-sm img-activity aspect-video"
+                className="w-full h-32 md:h-64 rounded-sm img-activity"
               />
               <Box className="absolute h-20 md:h-40 bg-gradient-to-t from-black z-50 w-full bottom-0">
                 <Text c={"white"} className="absolute bottom-3 left-5">

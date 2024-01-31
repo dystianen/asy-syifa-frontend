@@ -38,9 +38,10 @@ function CarouselHero() {
           <Image
             src={hero.file_path}
             blurDataURL={hero.file_path}
-            width={800}
-            height={400}
+            width={400}
+            height={200}
             alt="testing"
+            className="w-full h-full aspect-video"
             priority
           />
         </Carousel.Slide>
