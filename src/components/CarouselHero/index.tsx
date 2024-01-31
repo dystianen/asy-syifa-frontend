@@ -26,6 +26,12 @@ function CarouselHero() {
       plugins={[autoplay.current]}
       onMouseEnter={autoplay.current.stop}
       onMouseLeave={autoplay.current.reset}
+      previousControlProps={{
+        "aria-label": "Previous",
+      }}
+      nextControlProps={{
+        "aria-label": "Next",
+      }}
     >
       {responseHero?.data?.map((hero: any, index: number) => (
         <Carousel.Slide key={index}>
