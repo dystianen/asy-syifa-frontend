@@ -66,7 +66,7 @@ export default function Home() {
                   bg={"success.8"}
                   radius={"xl"}
                   onClick={scrollToElement}
-                  aria-labelledby="selengkapnya"
+                  aria-label="selengkapnya"
                 >
                   Lihat Selengkapnya
                 </Button>

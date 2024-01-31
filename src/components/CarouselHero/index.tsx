@@ -37,6 +37,9 @@ function CarouselHero() {
             alt="testing"
             className="w-full h-full aspect-video"
             priority
+            style={{
+              aspectRatio: 400 / 200,
+            }}
           />
         </Carousel.Slide>
       ))}

@@ -37,6 +37,9 @@ function Gallery() {
               height={200}
               alt="testing"
               className="w-full h-full"
+              style={{
+                aspectRatio: 400 / 200,
+              }}
             />
           </Carousel.Slide>
         ))}

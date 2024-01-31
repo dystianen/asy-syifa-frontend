@@ -8,7 +8,6 @@ import {
   Flex,
   Grid,
   Text,
-  Title,
   useMantineTheme,
 } from "@mantine/core";
 import Image from "next/image";
@@ -71,10 +70,13 @@ function News() {
                   <Card bg={"white"} radius={15} shadow="sm" p={0}>
                     <Image
                       src={item.img}
-                      width={300}
-                      height={100}
+                      width={600}
+                      height={300}
                       alt="image"
                       className="w-full object-contain"
+                      style={{
+                        aspectRatio: 1000 / 670,
+                      }}
                     />
                     <Box p={16}>
                       <Text fw={600} c={"neutral.9"} fz={18}>
@@ -109,7 +111,7 @@ function News() {
               bg={"white"}
               c={"success.8"}
               radius={"xl"}
-              aria-labelledby="semua-artikel"
+              aria-label="semua-artikel"
             >
               Lihat Semua Artikel
             </Button>

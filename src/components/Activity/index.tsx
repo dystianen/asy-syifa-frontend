@@ -15,10 +15,13 @@ function Activity() {
             <Card className="relative overflow-hidden card-activity" p={0}>
               <Image
                 src={activity.file_path}
-                width={200}
-                height={100}
+                width={1000}
+                height={400}
                 alt={activity.file_name}
                 className="w-full h-32 md:h-64 rounded-sm img-activity"
+                style={{
+                  aspectRatio: 1000 / 400,
+                }}
               />
               <Box className="absolute h-40 bg-gradient-to-t from-black z-50 w-full bottom-0">
                 <Text c={"white"} className="absolute bottom-3 left-5">

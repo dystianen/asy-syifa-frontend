@@ -74,7 +74,7 @@ function Contact() {
               <Flex gap={20}>
                 <ActionIcon
                   id="instagram"
-                  aria-labelledby="instagram"
+                  aria-label="instagram"
                   variant="transparent"
                   onClick={() =>
                     window.open("https://www.instagram.com/assovo/")
@@ -86,7 +86,7 @@ function Contact() {
                 </ActionIcon>
                 <ActionIcon
                   id="whatsapp"
-                  aria-labelledby="whatsapp"
+                  aria-label="whatsapp"
                   variant="transparent"
                   onClick={() =>
                     window.open(
