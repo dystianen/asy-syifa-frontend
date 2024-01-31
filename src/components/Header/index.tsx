@@ -55,7 +55,7 @@ function Header() {
             </Link>
             <Menu shadow="md">
               <Menu.Target>
-                <UnstyledButton>
+                <UnstyledButton aria-labelledby="profile">
                   <Flex align={"center"} gap={10}>
                     Profil
                     <IoIosArrowDown />
@@ -106,7 +106,7 @@ function Header() {
           <Link href={"/"}>Home</Link>
           <Menu shadow="md">
             <UnstyledButton
-              
+              aria-labelledby="profile"
               onClick={() => setOpenedProfile(!openedProfile)}
             >
               <Flex align={"center"} gap={10} c={getColorNavbar("/visi-misi")}>

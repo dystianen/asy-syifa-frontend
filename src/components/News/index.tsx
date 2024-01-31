@@ -105,7 +105,12 @@ function News() {
           </Grid>
 
           <Flex justify="center" mt={32}>
-            <Button bg={"white"} c={"success.8"} radius={"xl"}>
+            <Button
+              bg={"white"}
+              c={"success.8"}
+              radius={"xl"}
+              aria-labelledby="semua-artikel"
+            >
               Lihat Semua Artikel
             </Button>
           </Flex>
