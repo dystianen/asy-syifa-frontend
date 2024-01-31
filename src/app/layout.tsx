@@ -20,6 +20,12 @@ export const metadata: Metadata = {
   title: "Asy-Syifa’",
   description:
     "Menyediakan pendidikan dasar Agama yang berkualitas untuk putra-putri kaum muslimin serta mengembangkan kemampuan diri dan fitrah manusia akan agama, dan tergeraknya hati untuk membumikan Quran serta memahami fiqih sebagai bekal dasar hidup sehari-hari di masyarakat.",
+  viewport:
+    "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover",
+  icons: [
+    { rel: "apple-touch-icon", url: "/assets/logo.png" },
+    { rel: "icon", url: "/assets/logo.png" },
+  ],
 };
 
 export default function RootLayout({
@@ -29,10 +35,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/assets/logo.png" />
-        <title>Asy-Syifa’</title>
-      </head>
       <body className={poppins.className}>
         <Providers>
           <MantineProvider theme={theme}>
