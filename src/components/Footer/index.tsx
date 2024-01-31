@@ -74,6 +74,7 @@ function Contact() {
               <Flex gap={20}>
                 <ActionIcon
                   id="instagram"
+                  aria-labelledby="instagram"
                   variant="transparent"
                   onClick={() =>
                     window.open("https://www.instagram.com/assovo/")
@@ -85,6 +86,7 @@ function Contact() {
                 </ActionIcon>
                 <ActionIcon
                   id="whatsapp"
+                  aria-labelledby="whatsapp"
                   variant="transparent"
                   onClick={() =>
                     window.open(
@@ -101,7 +103,7 @@ function Contact() {
           </Grid.Col>
           <Grid.Col span={{ base: 12, md: 4 }}>
             <Stack>
-              <Title order={4}>Hubungi Kami</Title>
+              <Text fz={18} fw={600}>Hubungi Kami</Text>
               {dataContact.map((it, index) => (
                 <Flex key={index} align={"start"} gap={5}>
                   <Box mt={3}>{it.icon}</Box>
@@ -112,7 +114,7 @@ function Contact() {
           </Grid.Col>
           <Grid.Col span={{ base: 12, md: 4 }}>
             <Stack>
-              <Title order={4}>Peta Lokasi</Title>
+              <Text fz={18} fw={600}>Peta Lokasi</Text>
               <iframe
                 title="asy-syifa-maps"
                 width="100%"

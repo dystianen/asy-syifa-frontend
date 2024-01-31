@@ -20,8 +20,6 @@ export const metadata: Metadata = {
   title: "Asy-Syifa’",
   description:
     "Menyediakan pendidikan dasar Agama yang berkualitas untuk putra-putri kaum muslimin serta mengembangkan kemampuan diri dan fitrah manusia akan agama, dan tergeraknya hati untuk membumikan Quran serta memahami fiqih sebagai bekal dasar hidup sehari-hari di masyarakat.",
-  viewport:
-    "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover",
   icons: [
     { rel: "apple-touch-icon", url: "/assets/logo.png" },
     { rel: "icon", url: "/assets/logo.png" },
